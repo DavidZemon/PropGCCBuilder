@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install --yes --no-install-recommends \
         bzip2 \
         libexpat-dev \
         bison \
-        flex
-#    && rm --recursive --force /var/lib/apt/lists/*
+        flex \
+    && rm --recursive --force /var/lib/apt/lists/*
 
 RUN git clone --depth=1 git://github.com/raspberrypi/tools.git /opt/rpi-tools
 ENV PATH="/opt/rpi-tools/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin:${PATH}"
