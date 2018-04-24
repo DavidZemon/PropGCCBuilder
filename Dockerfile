@@ -16,8 +16,10 @@ RUN apt-get update && apt-get install --yes --no-install-recommends \
         flex \
     && rm --recursive --force /var/lib/apt/lists/*
 
-RUN git clone --depth=1 git://github.com/raspberrypi/tools.git /opt/rpi-tools
-ENV PATH="/opt/rpi-tools/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin:${PATH}"
+ENV HOME="/home/captain"
+ENV PATH="${HOME}/rpi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin:${PATH}"
+RUN git clone --depth=1 git://github.com/raspberrypi/tools.git "${HOME}/rpi/tools" && \
+    chmod 777 "${HOME}/rpi/tools" -R
 
 RUN cd /tmp && \
     wget http://ftp.gnu.org/gnu/texinfo/texinfo-4.13a.tar.gz && \
