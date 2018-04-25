@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install --yes --no-install-recommends \
         lib32stdc++6 \
     && rm --recursive --force /var/lib/apt/lists/*
 
-ENV HOME="/home/captain"
-ENV PATH="${HOME}/rpi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin:${PATH}"
+ENV HOME="/home/captain" \
+    PATH="/home/captain/rpi/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin:/opt/parallax/bin:${PATH}"
 RUN git clone --depth=1 git://github.com/raspberrypi/tools.git "${HOME}/rpi/tools" && \
     chmod 777 "${HOME}/rpi/tools" -R
 
