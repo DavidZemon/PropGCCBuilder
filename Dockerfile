@@ -14,6 +14,8 @@ RUN apt-get update && apt-get install --yes --no-install-recommends \
         libexpat-dev \
         bison \
         flex \
+        lib32z1 \
+        lib32stdc++6 \
     && rm --recursive --force /var/lib/apt/lists/*
 
 ENV HOME="/home/captain"
